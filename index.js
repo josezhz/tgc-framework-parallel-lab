@@ -16,11 +16,14 @@ app.use(express.urlencoded({
     extended: false
 }));
 
-async function main() {
+(async function () {
+    const landingRoutes = require('./routes/landing');
+    app.use('/', landingRoutes);
 
-}
-main();
+    const posterRoutes = require('./routes/posters');
+    app.use('/posters', posterRoutes);
+})();
 
-app.listen(3000, () => {
-    console.log("Server has started");
+app.listen(3000, function () {
+    console.log("Server started");
 });

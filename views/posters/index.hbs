@@ -1,0 +1,17 @@
+{{#extends 'base'}}
+
+{{#block 'content'}}
+<a href="/posters/create">Create</a>
+<h1>Posters</h1>
+<ul class="list-group">
+    {{#each posters}}
+    <li class="list-group-item">
+        <h3>{{this.name}}</h3>
+        <h5>Cost: {{this.cost}}</h5>
+        <div>{{this.description}}</div>
+    </li>
+    {{/each}}
+</ul>
+{{/block}}
+
+{{/extends}}
